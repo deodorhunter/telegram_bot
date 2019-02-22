@@ -8,7 +8,7 @@ function OmdbMessage() {
     // this.chat     = chat;
 
     this.omdb = new OmdbAPI({
-        apiKey   : '364676eb'
+        apiKey   : ''
     });
 }
 
