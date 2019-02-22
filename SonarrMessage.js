@@ -9,12 +9,12 @@ function SonarrMessage(bot, user, chat, cache) {
     this.user     = user;
     this.chat     = chat;
     this.cache    = cache;
-    this.adminId  = 465815448;
+    this.adminId  = ;
     this.username = this.user.username || (this.user.first_name + (' ' + this.user.last_name || ''));
 
     this.sonarr = new SonarrAPI({
         hostname : 'localhost',
-        apiKey   : '76342ecd18d24b38bf76e8fe484b81f6',
+        apiKey   : '',
         port     : 38082,
         urlBase  : '',
         ssl      : false,
