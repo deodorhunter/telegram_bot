@@ -9,12 +9,12 @@ function RadarrMessage(bot, user, chat, cache) {
     this.user     = user;
     this.chat     = chat;
     this.cache    = cache;
-    this.adminId  = 465815448;
+    this.adminId  = ;
     this.username = this.user.username || (this.user.first_name + (' ' + this.user.last_name || ''));
 
     this.radarr = new RadarrAPI({
         hostname : 'localhost',
-        apiKey   : 'c19589f6cf3f488fb8d3f17adb423a0d',
+        apiKey   : '',
         port     : 38083,
         urlBase  : '',
         ssl      : false,
