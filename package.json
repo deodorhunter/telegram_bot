@@ -1,0 +1,30 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "telebram bot",
+  "main": "index.js",
+  "author": "marti",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "events": "^3.0.0",
+    "firebase": "^5.7.1",
+    "fs": "^0.0.1-security",
+    "googleapis": "^36.0.0",
+    "imdb-api": "^4.0.2",
+    "lodash": "^4.17.11",
+    "micro-bot": "^2.5.3",
+    "node-cache": "^4.2.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "open-graph-scraper": "^3.6.0",
+    "response": "^0.18.0",
+    "sonarr-api": "^0.2.0",
+    "telegraf": "^3.25.5"
+  },
+  "engines": {
+    "node": "10.15.0"
+  }
+}
