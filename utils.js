@@ -4,12 +4,12 @@ const ogs = require('open-graph-scraper');
 const firebase = require('firebase');
 //database settings
 const app = firebase.initializeApp ({
-    apiKey: "AIzaSyDM39gVN1lRswYGsWBcN4B4bZU7J0Psrek",
+    apiKey: "",
     authDomain: "telegram-bot-for-plex.firebaseapp.com",
     databaseURL: "https://telegram-bot-for-plex.firebaseio.com",
     projectId: "telegram-bot-for-plex",
     storageBucket: "telegram-bot-for-plex.appspot.com",
-    messagingSenderId: "441793945348"
+    messagingSenderId: ""
 });
 const ref = firebase.database().ref();
 const movieRef=ref.child("movies");
