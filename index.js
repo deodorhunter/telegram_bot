@@ -17,14 +17,13 @@ const OmdbMessage = require('./OmdbMessage');
 const request = require('request');
 
 //local variables
-const token='726883745:AAFbQ84Dqe10_-l3phqloxL8RgQQUJSzkaY';
+const token='';
 const bot = new TelegramBot(token, {polling:true});
 const radarrCache = new NodeCache({ stdTTL: 120, checkperiod: 150 });
 const sonarrCache = new NodeCache({ stdTTL: 120, checkperiod: 150 });
 const botCache = new NodeCache({ stdTTL: 120, checkperiod: 150 });
-const myId = 465815448;
-const groupId = '-332791650';
-const dioporco='@ana_t_bot';
+const myId = ;
+const groupId = '';
 const ref = dbFunctions.ref;
 const movieRef = dbFunctions.movieRef;
 const animeRef = dbFunctions.animeRef;
