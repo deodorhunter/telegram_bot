@@ -111,12 +111,15 @@ bot.on('message', function(msg){
 
 });
 
+//We created an empty let which we will use to store the received URL. Then we use the Telegram API to catch the onText
+// event and use a Regular Expressions to separate the URL from the command. This will create an array from which we will
+// select the second value (which is [1] because arrays start from zero)
 
 //help section
 bot.onText(/\/help/, (msg,match) =>{
     console.log(msg.chat.id)
 
-    bot.sendMessage(msg.chat.id, 'Sono solo una bottana, questo è quello che faccio (per 50 euro)\n\n'+
+    bot.sendMessage(msg.chat.id, 
             'usa @ana_t_bot + titolo di quello che vuoi cercare, e scegli tra i risultati. Clicca Bookmark it! sotto il risultato selezionato per aggiungerlo\n'+
             '/getlist: uso /getList (anime,movies,tv), restituisce una lista completa degli elementi presenti per categoria\n'+
             '/searchfilm, /searchtv, /searchanime (ricerca), restituisce i match alla keyword nella categoria\n' +
@@ -150,10 +153,10 @@ bot.onText(/\/bot/, (msg, match) =>{
     bot.sendMessage(msg.chat.id, 'Mi puoi raggiungere in privato a t.me/ana_t_bot');
 });
 
-//get help with linking bookmarks
-bot.onText(/\/howtourl/, (msg, match) =>{
-    bot.sendMessage(msg.chat.id, 'Usa @imdb in privato per cercare il film/serieTv (al fine di evitare spam), e poi usa il link trovato per aggiungere un bookmark se vuoi!');
-});
+//get help with linking bookmarks-> DEPRECATED
+//bot.onText(/\/howtourl/, (msg, match) =>{
+//    bot.sendMessage(msg.chat.id, 'Usa @imdb in privato per cercare il film/serieTv (al fine di evitare spam), e poi usa il link trovato per aggiungere un bookmark se vuoi!');
+//});
 
 //il comando che tutti volevano
 bot.onText(/\/lsc/, (msg,match) => {
@@ -216,37 +219,7 @@ bot.onText(/\/remove (.+)/, (msg,match) =>{
     });
 });
 
-//We created an empty let which we will use to store the received URL. Then we use the Telegram API to catch the onText
-// event and use a Regular Expressions to separate the URL from the command. This will create an array from which we will
-// select the second value (which is [1] because arrays start from zero) and set the variable siteUrl to this value.
-// bot.onText(/\/bookmark (.+)/, (msg, match) => {
-//     siteUrl = match[1];
-//     console.log(siteUrl);
-//     var prova = siteUrl.toString();
-//     console.log(prova);
-//     if (prova === dioporco){
-//         console.log("dioporco");
-//         return -1;
-//     }
-//     sender=msg.from.first_name+'/'+msg.from.id;
-//     console.log(sender);
-//     bot.sendMessage(msg.chat.id,'Got it, in which category?', {
-//         reply_markup: {
-//             inline_keyboard: [[
-//                 {
-//                     text: 'Film',
-//                     callback_data: 'movies'
-//                 },{
-//                     text: 'SerieTv',
-//                     callback_data: 'tv'
-//                 },{
-//                     text: 'Anime',
-//                     callback_data: 'anime'
-//                 }
-//             ]]
-//         }
-//     });
-// });
+
 
 //dump data
 // bot.onText(/\/dump/, (msg,match) => {
@@ -414,7 +387,7 @@ bot.onText(/\/searchanime (.+)/, (msg, match) =>{
 //If the bot receives a callback query (meaning that we used the inline keyboard to sent something to him in this case)
 // it will receive this information and process it.ogs (Open Graph Scraper) will scrap the URL we passed it into a JSON file.
 //If the scraping is successful (we check by using the success flag) it pushes the OG information, along with the site URL,
-// to Firebase and sends us a reply letting use know it added the bookmark
+// to Firebase and sends us a reply letting us know it added the bookmark
 bot.on("callback_query", (callbackQuery) => {
     const message = callbackQuery.message;
     var scrape;
@@ -459,6 +432,7 @@ bot.on("callback_query", (callbackQuery) => {
             console.log(e.message)
         })
     }
+ /* DEPRECATED
     if(message!== 'undefined' && message.text === 'Got it, in which category?')
     {
         var scelta = callbackQuery.data.toString();
@@ -492,7 +466,7 @@ bot.on("callback_query", (callbackQuery) => {
                 console.log('in main :'+error);
             });
         })
-
+    */
     }
     else if(message!='undefined' && message.text == 'Do you want to add it now to server?')
     {
@@ -513,10 +487,7 @@ bot.on("callback_query", (callbackQuery) => {
 
         bot.answerCallbackQuery(callbackQuery.id);
     }
-    //if(message.text.indexOf('Let\'s see what we\'ve got...')!==-1){
-    //else if(typeof message === 'undefined'){
-
-    //}
+   
 
 });
 
