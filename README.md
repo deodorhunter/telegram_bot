@@ -6,7 +6,8 @@ multimediali di un server Plex, e all'inserimento di nuovi contenuti basato sull
 Le funzionalita' sono supportate dal database NoSQL Firebase per quanto riguarda il salvataggio dei bookmark degli utenti e il loro recupero
 e aggiornamento, e da richieste API a Open Movie Database, Radarr e Sonarr (programmi ausiliari di gestione locali sul server)
 
-Le funzionalita' per gli utenti sono:
+
+# Le funzionalita' per gli utenti sono:
 
 inline query: usa @ana_t_bot + titolo di quello che vuoi cercare, e scegli tra i risultati. Clicca Bookmark it! 
                 sotto il risultato selezionato per aggiungerlo
@@ -25,7 +26,8 @@ inline query: usa @ana_t_bot + titolo di quello che vuoi cercare, e scegli tra i
 
 /help: mostra tutti i comandi
 
-Le funzionalita' esclusive per l'amministratore del server sono:
+
+# Le funzionalita' esclusive per l'amministratore del server sono:
 
 /accept (keyword): accetta la richiesta di un utente
 
